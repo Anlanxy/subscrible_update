@@ -244,7 +244,7 @@ function dataResults(url, checkinMsg, title) {
             restData = restData[0].match(/\d\S*(K|G|M|T)/)
             $notification.post(title, checkinMsg, "已用流量：" + usedData[0] + "B" + "\n剩余流量：" + restData[0] + "B");
         } else {
-            $notification.post(title + '获取流量信息失败', "", "");
+            $notification.post(title + '签到成功', "", "");
         }
     });
 }

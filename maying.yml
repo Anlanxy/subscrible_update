@@ -1,0 +1,735 @@
+port: 7890
+socks-port: 7891
+allow-lan: false
+mode: Rule
+log-level: info
+external-controller: :9090
+proxies:
+- name: "TW-自建"
+  type: trojan
+  server: nono.bnmc.ga
+  port: 443
+  password: jkl98798
+- {name: V2 台湾 Hinet 600 NF-0.2x, server: hinet.node.fg-ddns.com, port: 8080, type: vmess, uuid: 6b5c21eb-c51b-3dd0-8dba-4ca7ab637993, alterId: 0, cipher: auto, tls: false, network: ws, ws-path: /hls/cctv5phd.m3u8, ws-headers: {Host: hinet.node.fg-ddns.com}}
+- {name: V2 日本 IIJ 200M NF-0x(测试), server: gmo.node.fg-ddns.com, port: 8080, type: vmess, uuid: 6b5c21eb-c51b-3dd0-8dba-4ca7ab637993, alterId: 0, cipher: auto, tls: false, network: ws, ws-path: /hls/cctv5phd.m3u8, ws-headers: {Host: gmo.node.fg-ddns.com}}
+- {name: V2 美国 FREE-0x, server: free01.node.fg-ddns.com, port: 8080, type: vmess, uuid: 6b5c21eb-c51b-3dd0-8dba-4ca7ab637993, alterId: 0, cipher: auto, tls: false, network: ws, ws-path: /hls/cctv5phd.m3u8, ws-headers: {Host: free01.node.fg-ddns.com}}
+- {name: V2 香港  DMIT 01 200M NF-2.8x, server: dmit01.node.fg-ddns.com, port: 8080, type: vmess, uuid: 6b5c21eb-c51b-3dd0-8dba-4ca7ab637993, alterId: 0, cipher: auto, tls: false, network: ws, ws-path: /hls/cctv5phd.m3u8, ws-headers: {Host: dmit01.node.fg-ddns.com}}
+- {name: V2 香港  DMIT 02 200M NF-2.8x, server: dmit02.node.fg-ddns.com, port: 8080, type: vmess, uuid: 6b5c21eb-c51b-3dd0-8dba-4ca7ab637993, alterId: 0, cipher: auto, tls: false, network: ws, ws-path: /hls/cctv5phd.m3u8, ws-headers: {Host: dmit02.node.fg-ddns.com}}
+- {name: V2 香港  DMIT 03 200M NF-2.8x, server: dmit03.node.fg-ddns.com, port: 8080, type: vmess, uuid: 6b5c21eb-c51b-3dd0-8dba-4ca7ab637993, alterId: 0, cipher: auto, tls: false, network: ws, ws-path: /hls/cctv5phd.m3u8, ws-headers: {Host: dmit03.node.fg-ddns.com}}
+- {name: V2 香港 HKT打机 1G NF-0.2x, server: hkt.node.fg-ddns.com, port: 8080, type: vmess, uuid: 6b5c21eb-c51b-3dd0-8dba-4ca7ab637993, alterId: 0, cipher: auto, tls: false, network: ws, ws-path: /hls/cctv5phd.m3u8, ws-headers: {Host: hkt.node.fg-ddns.com}}
+- {name: 订阅失败请使用国内网络或本站节点更新订阅, server: www.bityun.org, port: 80, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /, ws-headers: {Host: www.bityun.org}}
+- {name: "香港-AWS-01 [华中隧道]", server: cs-cu01.bityun.co, port: 40036, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "香港-AWS-02 [微软专线S]", server: sh-az2.bityun.co, port: 9137, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "香港-AWS-03 [广东隧道]", server: gd-ct02.bityun.co, port: 9137, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "香港-AWS-04 [三网隧道]", server: gd-ct01.bityun.co, port: 9137, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "香港-AWS-05 [微软专线B]", server: bj-az.bityun.co, port: 9136, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "香港-AWS-06 [微软专线C]", server: sh-az2.bityun.co, port: 9136, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "台湾-HiNet-台北01-三网隧道 [Netflix]", server: gd-ct01.bityun.co, port: 9101, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: twstatic.jerrui.com}}
+- {name: "台湾-HiNet-台北02-华中隧道 [Netflix]", server: cs-cu01.bityun.co, port: 9092, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: twstatic.jerrui.com}}
+- {name: "台湾-HiNet-台北03-广东隧道 [Netflix]", server: gd-ct02.bityun.co, port: 8092, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: twstatic.jerrui.com}}
+- {name: "台湾-HiNet-台北05-微软专线C [Netflix]", server: sh-az2.bityun.co, port: 8092, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: twstatic.jerrui.com}}
+- {name: "台湾-HiCloud-商宽01-华中隧道 [Netflix]", server: cs-cu01.bityun.co, port: 40012, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: twstatic.jerrui.com}}
+- {name: "台湾-HiCloud-商宽02-三网隧道 [Netflix]", server: gd-ct01.bityun.co, port: 9127, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "台湾-HiCloud-商宽03-微软专线B [Netflix]", server: bj-az.bityun.co, port: 9167, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "台湾-HiCloud-商宽03-广东隧道 [Netflix]", server: gd-ct02.bityun.co, port: 9167, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "台湾-HiCloud-商宽04-微软专线C [Netflix]", server: sh-az2.bityun.co, port: 9167, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "日本-GMO-01 三网隧道 [Netflix]", server: gd-ct01.bityun.co, port: 9100, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /, ws-headers: {Host: gd-ct01.bityun.co}}
+- {name: "日本-GMO-02 广东隧道 [Netflix]", server: gd-ct02.bityun.co, port: 8100, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /, ws-headers: {Host: gd-ct02.bityun.co}}
+- {name: "日本-GMO-03 华中隧道 [Netflix]", server: cs-cu01.bityun.co, port: 40098, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /, ws-headers: {Host: cs-cu01.bityun.co}}
+- {name: "日本-AWS-01 [华中隧道]", server: cs-cu01.bityun.co, port: 40033, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "日本-AWS-02 [广东隧道]", server: gd-ct02.bityun.co, port: 9134, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "日本-AWS-02 [三网隧道]", server: gd-ct01.bityun.co, port: 9134, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "日本-AWS-03 [微软专线S]", server: sh-az2.bityun.co, port: 9134, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "日本-Azure-02 [微软专线B]", server: bj-az.bityun.co, port: 9156, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "日本-Azure-03 [微软专线C]", server: sh-az2.bityun.co, port: 9156, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "日本-Azure-04 [三网隧道]", server: gd-ct01.bityun.co, port: 9152, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "日本-Azure-04 [广东隧道]", server: gd-ct02.bityun.co, port: 9156, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: jp01.jerrui.com}}
+- {name: "日本-Azure-03 [华中隧道]", server: cs-cu01.bityun.co, port: 40025, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "日本-Linode-01 微软专线B [Netflix]", server: bj-az.bityun.co, port: 9111, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "日本-Linode-02 微软专线C [Netflix]", server: sh-az2.bityun.co, port: 9111, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "日本-Linode-03 华中隧道 [Netflix]", server: cs-cu01.bityun.co, port: 40015, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "日本-Linode-04 三网隧道 [Netflix]", server: gd-ct01.bityun.co, port: 9099, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "日本-Linode-05 广东隧道 [Netflix]", server: gd-ct02.bityun.co, port: 9111, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "新加坡 Linode-01 [华中隧道]", server: cs-cu01.bityun.co, port: 40016, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "新加坡 Linode-02 [微软专线C]", server: sh-az2.bityun.co, port: 9114, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "新加坡 Linode-03 [广州移动]", server: gd-ct02.bityun.co, port: 9101, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "新加坡 Linode-04 华中隧道 [Netflix]", server: cs-cu01.bityun.co, port: 40019, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "新加坡 Linode-03 广东隧道 [Netflix]", server: gd-ct02.bityun.co, port: 9103, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "新加坡 Linode-05 三网隧道 [Netflix]", server: gd-ct01.bityun.co, port: 9098, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "新加坡 Linode-05 微软专线S [Neiflix]", server: sh-az2.bityun.co, port: 9112, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "新加坡-Azure-01 [三网隧道]", server: gd-ct01.bityun.co, port: 9199, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "新加坡 Azure-02 [CDN优化]", server: azsg01.jerrui.com, port: 80, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: azsg01.jerrui.com}}
+- {name: "新加坡-Azure-03 [华中隧道]", server: cs-cu01.bityun.co, port: 40097, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "新加坡-Azure-05 [微软专线B]", server: bj-az.bityun.co, port: 9095, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "新加坡-Azure-06 [微软专线C]", server: sh-az2.bityun.co, port: 9095, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "新加坡-Alibaba-01 30M [Netflix]", server: sg-alb.malustv.com, port: 80, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "南朝鲜-Azure-01 [微软专线S]", server: sh-az2.bityun.co, port: 9123, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "南朝鲜-Azure-02 [三网隧道]", server: gd-ct01.bityun.co, port: 9120, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "南朝鲜-Azure-03 [广东隧道]", server: gd-ct02.bityun.co, port: 9123, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "英国-London-01 微软专线C [BBC]", server: sh-az2.bityun.co, port: 9132, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "英国-London-02 华中隧道 [BBC] x0.8x", server: cs-cu01.bityun.co, port: 9132, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "英国-London-02 三网隧道 [BBC] x0.8x", server: gd-ct01.bityun.co, port: 9132, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "美国-Washington D.C-01 华中隧道 [Netflix]", server: cs-cu01.bityun.co, port: 40029, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "美国-Washington D.C-02 微软专线S [Netflix]", server: sh-az.bityun.co, port: 9125, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "美国-Los Angeles-01 广东隧道 [Netflix]", server: gd-ct02.bityun.co, port: 9131, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "美国-Los Angeles-02 微软专线S [Netflix]", server: sh-az.bityun.co, port: 9131, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "美国-Los Angeles-03 华中隧道 [Netflix]", server: cs-cu01.bityun.co, port: 40026, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "美国-Los Angeles-04 三网隧道 [Netflix]", server: gd-ct01.bityun.co, port: 9125, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "美国-Los Angeles-05 微软专线C [Netflix]", server: sh-az2.bityun.co, port: 9125, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "美国-Los Angeles-06 微软专线B [Netflix]", server: bj-az.bityun.co, port: 9131, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "美国-Fremont-01 微软专线C [Netflix]", server: sh-az2.bityun.co, port: 9098, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "美国-Fremont-02 三网隧道 [Netflix]", server: gd-ct01.bityun.co, port: 9096, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "美国-Fremont-03 华中隧道 [Netflix]", server: cs-cu01.bityun.co, port: 40013, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "美国-San Jose-01 三网隧道 [Netflix] x0.8x", server: gd-ct01.bityun.co, port: 9201, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "美国-San Jose-02 华中隧道 [Netflix] x0.8x", server: cs-cu01.bityun.co, port: 9201, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "美国-San Jose-03 广东隧道 [Netflix] x0.8x", server: gd-ct02.bityun.co, port: 9201, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "香港-HKT-00 三网隧道 [Netflix]", server: gd-ct01.bityun.co, port: 8024, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "香港-HKT-01 微软专线C [Netflix]", server: sh-az2.bityun.co, port: 8024, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "香港-HKT-02 华中隧道 [Netflix]", server: cs-cu01.bityun.co, port: 40027, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "香港-HKT-03 三网隧道 [Netflix]", server: gd-ct01.bityun.co, port: 9991, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "香港-HKT-04 微软专线B [Netflix]", server: bj-az.bityun.co, port: 9091, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "香港-HKT-05 华中隧道 [Netflix]", server: cs-cu01.bityun.co, port: 8024, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "香港-HKT-06 微软专线S [Netflix]", server: sh-az.bityun.co, port: 9130, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "香港-HKT-07 华中隧道 [Netflix]", server: cs-cu01.bityun.co, port: 40011, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "香港-HKT-08 广东隧道 [Netflix]", server: gd-ct02.bityun.co, port: 8024, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "香港-HKT-09 华中隧道 [Netflix]", server: cs-cu01.bityun.co, port: 40021, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "香港-HKT-10 三网隧道 [Netflix]", server: gd-ct01.bityun.co, port: 9103, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "香港-HKT-11 微软专线S [Netflix]", server: sh-az.bityun.co, port: 9168, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "香港-HKBN-03 华中隧道 [Netflix]", server: cs-cu01.bityun.co, port: 8024, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "香港-HKBN-04 广东隧道 [Netflix]", server: gd-ct02.bityun.co, port: 8024, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "香港-HKBN-06 三网隧道 [Netflix]", server: gd-ct01.bityun.co, port: 9991, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "香港-HKBN-08 微软专线C [Netflix]", server: sh-az2.bityun.co, port: 8024, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "香港-Azure-01 [三网隧道]", server: gd-ct01.bityun.co, port: 9093, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "香港-Azure-02 [微软专线S]", server: sh-az.bityun.co, port: 9097, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "香港-Azure-03 [微软专线C]", server: sh-az2.bityun.co, port: 9097, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "香港-Azure-03 [广东隧道]", server: gd-ct02.bityun.co, port: 9097, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "香港-Azure-04 [华中隧道]", server: cs-cu01.bityun.co, port: 40018, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "香港-Azure-05 [华中隧道]", server: cs-cu01.bityun.co, port: 9135, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "香港-Azure-06 [三网隧道]", server: gd-ct01.bityun.co, port: 9180, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "香港-Azure-07 [微软专线B]", server: bj-az.bityun.co, port: 9135, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "香港-Azure-08 [微软专线C]", server: sh-az2.bityun.co, port: 9122, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "香港 Azure-09 [CDN优化]", server: hk01.jerrui.com, port: 80, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: hk01.jerrui.com}}
+- {name: "俄罗斯-Khabarovsk-01 广东隧道 [Netflix] x0.8x", server: gd-ct02.bityun.co, port: 9200, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "俄罗斯-Khabarovsk-02 三网隧道 [Netflix] x0.8x", server: gd-ct01.bityun.co, port: 9200, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "俄罗斯-Khabarovsk-03 微软专线C [Netflix]", server: sh-az2.bityun.co, port: 9200, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false, network: ws, ws-path: /cctv13/hd.m3u8, ws-headers: {Host: www.baidu.com}}
+- {name: "深港-IPLC专线01-500M [Netflix] x5x", server: sziplc.bityun.co, port: 9090, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false}
+- {name: "深港-IPLC专线02-500M [Netflix] x5x", server: sziplc.bityun.co, port: 9091, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false}
+- {name: "深港-IPLC专线03-500M [Netflix] x5x", server: sziplc.bityun.co, port: 9092, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false}
+- {name: "深港-IPLC专线04-500M [Netflix] x5x", server: sziplc.bityun.co, port: 9093, type: vmess, uuid: 1e837e1c-047c-406a-82bd-68cab1bd9ead, alterId: 2, cipher: auto, tls: false}
+proxy-groups:
+  - name: Proxies
+    type: select
+    proxies:
+      - HK
+      - SG
+      - JP
+      - US
+      - TW
+      - 订阅失败请使用国内网络或本站节点更新订阅
+      - 香港-AWS-01 [华中隧道]
+      - 香港-AWS-02 [微软专线S]
+      - 香港-AWS-03 [广东隧道]
+      - 香港-AWS-04 [三网隧道]
+      - 香港-AWS-05 [微软专线B]
+      - 香港-AWS-06 [微软专线C]
+      - 台湾-HiNet-台北01-三网隧道 [Netflix]
+      - 台湾-HiNet-台北02-华中隧道 [Netflix]
+      - 台湾-HiNet-台北03-广东隧道 [Netflix]
+      - 台湾-HiNet-台北05-微软专线C [Netflix]
+      - 台湾-HiCloud-商宽01-华中隧道 [Netflix]
+      - 台湾-HiCloud-商宽02-三网隧道 [Netflix]
+      - 台湾-HiCloud-商宽03-微软专线B [Netflix]
+      - 台湾-HiCloud-商宽03-广东隧道 [Netflix]
+      - 台湾-HiCloud-商宽04-微软专线C [Netflix]
+      - TW-自建
+      - V2 台湾 Hinet 600 NF-0.2x
+      - V2 日本 IIJ 200M NF-0x(测试)
+      - V2 美国 FREE-0x
+      - V2 香港  DMIT 01 200M NF-2.8x
+      - V2 香港  DMIT 02 200M NF-2.8x
+      - V2 香港  DMIT 03 200M NF-2.8x
+      - V2 香港 HKT打机 1G NF-0.2x
+      - 日本-GMO-01 三网隧道 [Netflix]
+      - 日本-GMO-02 广东隧道 [Netflix]
+      - 日本-GMO-03 华中隧道 [Netflix]
+      - 日本-AWS-01 [华中隧道]
+      - 日本-AWS-02 [广东隧道]
+      - 日本-AWS-02 [三网隧道]
+      - 日本-AWS-03 [微软专线S]
+      - 日本-Azure-02 [微软专线B]
+      - 日本-Azure-03 [微软专线C]
+      - 日本-Azure-04 [三网隧道]
+      - 日本-Azure-04 [广东隧道]
+      - 日本-Azure-03 [华中隧道]
+      - 日本-Linode-01 微软专线B [Netflix]
+      - 日本-Linode-02 微软专线C [Netflix]
+      - 日本-Linode-03 华中隧道 [Netflix]
+      - 日本-Linode-04 三网隧道 [Netflix]
+      - 日本-Linode-05 广东隧道 [Netflix]
+      - 新加坡 Linode-01 [华中隧道]
+      - 新加坡 Linode-02 [微软专线C]
+      - 新加坡 Linode-03 [广州移动]
+      - 新加坡 Linode-04 华中隧道 [Netflix]
+      - 新加坡 Linode-03 广东隧道 [Netflix]
+      - 新加坡 Linode-05 三网隧道 [Netflix]
+      - 新加坡 Linode-05 微软专线S [Neiflix]
+      - 新加坡-Azure-01 [三网隧道]
+      - 新加坡 Azure-02 [CDN优化]
+      - 新加坡-Azure-03 [华中隧道]
+      - 新加坡-Azure-05 [微软专线B]
+      - 新加坡-Azure-06 [微软专线C]
+      - 新加坡-Alibaba-01 30M [Netflix]
+      - 南朝鲜-Azure-01 [微软专线S]
+      - 南朝鲜-Azure-02 [三网隧道]
+      - 南朝鲜-Azure-03 [广东隧道]
+      - 英国-London-01 微软专线C [BBC]
+      - 英国-London-02 华中隧道 [BBC] x0.8x
+      - 英国-London-02 三网隧道 [BBC] x0.8x
+      - 美国-Washington D.C-01 华中隧道 [Netflix]
+      - 美国-Washington D.C-02 微软专线S [Netflix]
+      - 美国-Los Angeles-01 广东隧道 [Netflix]
+      - 美国-Los Angeles-02 微软专线S [Netflix]
+      - 美国-Los Angeles-03 华中隧道 [Netflix]
+      - 美国-Los Angeles-04 三网隧道 [Netflix]
+      - 美国-Los Angeles-05 微软专线C [Netflix]
+      - 美国-Los Angeles-06 微软专线B [Netflix]
+      - 美国-Fremont-01 微软专线C [Netflix]
+      - 美国-Fremont-02 三网隧道 [Netflix]
+      - 美国-Fremont-03 华中隧道 [Netflix]
+      - 美国-San Jose-01 三网隧道 [Netflix] x0.8x
+      - 美国-San Jose-02 华中隧道 [Netflix] x0.8x
+      - 美国-San Jose-03 广东隧道 [Netflix] x0.8x
+      - 香港-HKT-00 三网隧道 [Netflix]
+      - 香港-HKT-01 微软专线C [Netflix]
+      - 香港-HKT-02 华中隧道 [Netflix]
+      - 香港-HKT-03 三网隧道 [Netflix]
+      - 香港-HKT-04 微软专线B [Netflix]
+      - 香港-HKT-05 华中隧道 [Netflix]
+      - 香港-HKT-06 微软专线S [Netflix]
+      - 香港-HKT-07 华中隧道 [Netflix]
+      - 香港-HKT-08 广东隧道 [Netflix]
+      - 香港-HKT-09 华中隧道 [Netflix]
+      - 香港-HKT-10 三网隧道 [Netflix]
+      - 香港-HKT-11 微软专线S [Netflix]
+      - 香港-HKBN-03 华中隧道 [Netflix]
+      - 香港-HKBN-04 广东隧道 [Netflix]
+      - 香港-HKBN-06 三网隧道 [Netflix]
+      - 香港-HKBN-08 微软专线C [Netflix]
+      - 香港-Azure-01 [三网隧道]
+      - 香港-Azure-02 [微软专线S]
+      - 香港-Azure-03 [微软专线C]
+      - 香港-Azure-03 [广东隧道]
+      - 香港-Azure-04 [华中隧道]
+      - 香港-Azure-05 [华中隧道]
+      - 香港-Azure-06 [三网隧道]
+      - 香港-Azure-07 [微软专线B]
+      - 香港-Azure-08 [微软专线C]
+      - 香港 Azure-09 [CDN优化]
+      - 俄罗斯-Khabarovsk-01 广东隧道 [Netflix] x0.8x
+      - 俄罗斯-Khabarovsk-02 三网隧道 [Netflix] x0.8x
+      - 俄罗斯-Khabarovsk-03 微软专线C [Netflix]
+      - 深港-IPLC专线01-500M [Netflix] x5x
+      - 深港-IPLC专线02-500M [Netflix] x5x
+      - 深港-IPLC专线03-500M [Netflix] x5x
+      - 深港-IPLC专线04-500M [Netflix] x5x
+  - name: Apple
+    type: select
+    proxies:
+      - DIRECT
+      - Proxies
+  - name: Telegram
+    type: select
+    proxies:
+      - Proxies
+      - HK
+      - SG
+  - name: Youtube
+    type: select
+    proxies:
+      - Proxies
+      - HK
+      - US
+  - name: Netflix
+    type: select
+    proxies:
+      - Proxies
+      - HK
+      - SG
+      - JP
+      - US
+      - TW
+      - V2 台湾 Hinet 600 NF-0.2x
+      - V2 日本 IIJ 200M NF-0x(测试)
+      - V2 香港  DMIT 01 200M NF-2.8x
+      - V2 香港  DMIT 02 200M NF-2.8x
+      - V2 香港  DMIT 03 200M NF-2.8x
+      - V2 香港 HKT打机 1G NF-0.2x
+      - 台湾-HiNet-台北01-三网隧道 [Netflix]
+      - 台湾-HiNet-台北02-华中隧道 [Netflix]
+      - 台湾-HiNet-台北03-广东隧道 [Netflix]
+      - 台湾-HiNet-台北05-微软专线C [Netflix]
+      - 台湾-HiCloud-商宽01-华中隧道 [Netflix]
+      - 台湾-HiCloud-商宽02-三网隧道 [Netflix]
+      - 台湾-HiCloud-商宽03-微软专线B [Netflix]
+      - 台湾-HiCloud-商宽03-广东隧道 [Netflix]
+      - 台湾-HiCloud-商宽04-微软专线C [Netflix]
+      - 日本-GMO-01 三网隧道 [Netflix]
+      - 日本-GMO-02 广东隧道 [Netflix]
+      - 日本-GMO-03 华中隧道 [Netflix]
+      - 日本-Linode-01 微软专线B [Netflix]
+      - 日本-Linode-02 微软专线C [Netflix]
+      - 日本-Linode-03 华中隧道 [Netflix]
+      - 日本-Linode-04 三网隧道 [Netflix]
+      - 日本-Linode-05 广东隧道 [Netflix]
+      - 新加坡 Linode-04 华中隧道 [Netflix]
+      - 新加坡 Linode-03 广东隧道 [Netflix]
+      - 新加坡 Linode-05 三网隧道 [Netflix]
+      - 新加坡-Alibaba-01 30M [Netflix]
+      - 美国-Washington D.C-01 华中隧道 [Netflix]
+      - 美国-Washington D.C-02 微软专线S [Netflix]
+      - 美国-Los Angeles-01 广东隧道 [Netflix]
+      - 美国-Los Angeles-02 微软专线S [Netflix]
+      - 美国-Los Angeles-03 华中隧道 [Netflix]
+      - 美国-Los Angeles-04 三网隧道 [Netflix]
+      - 美国-Los Angeles-05 微软专线C [Netflix]
+      - 美国-Los Angeles-06 微软专线B [Netflix]
+      - 美国-Fremont-01 微软专线C [Netflix]
+      - 美国-Fremont-02 三网隧道 [Netflix]
+      - 美国-Fremont-03 华中隧道 [Netflix]
+      - 美国-San Jose-01 三网隧道 [Netflix] x0.8x
+      - 美国-San Jose-02 华中隧道 [Netflix] x0.8x
+      - 美国-San Jose-03 广东隧道 [Netflix] x0.8x
+      - 香港-HKT-00 三网隧道 [Netflix]
+      - 香港-HKT-01 微软专线C [Netflix]
+      - 香港-HKT-02 华中隧道 [Netflix]
+      - 香港-HKT-03 三网隧道 [Netflix]
+      - 香港-HKT-04 微软专线B [Netflix]
+      - 香港-HKT-05 华中隧道 [Netflix]
+      - 香港-HKT-06 微软专线S [Netflix]
+      - 香港-HKT-07 华中隧道 [Netflix]
+      - 香港-HKT-08 广东隧道 [Netflix]
+      - 香港-HKT-09 华中隧道 [Netflix]
+      - 香港-HKT-10 三网隧道 [Netflix]
+      - 香港-HKT-11 微软专线S [Netflix]
+      - 香港-HKBN-03 华中隧道 [Netflix]
+      - 香港-HKBN-04 广东隧道 [Netflix]
+      - 香港-HKBN-06 三网隧道 [Netflix]
+      - 香港-HKBN-08 微软专线C [Netflix]
+      - 俄罗斯-Khabarovsk-01 广东隧道 [Netflix] x0.8x
+      - 俄罗斯-Khabarovsk-02 三网隧道 [Netflix] x0.8x
+      - 俄罗斯-Khabarovsk-03 微软专线C [Netflix]
+      - 深港-IPLC专线01-500M [Netflix] x5x
+      - 深港-IPLC专线02-500M [Netflix] x5x
+      - 深港-IPLC专线03-500M [Netflix] x5x
+      - 深港-IPLC专线04-500M [Netflix] x5x
+  - name: Netease
+    type: select
+    proxies:
+      - DIRECT
+      - Proxies
+  - name: HKMTMedia
+    type: select
+    proxies:
+      - DIRECT
+      - Proxies
+      - HK
+      - TW
+  - name: GlobalMedia
+    type: select
+    proxies:
+      - Proxies
+      - HK
+      - SG
+      - JP
+      - US
+      - TW
+      - DIRECT
+  - name: Final
+    type: select
+    proxies:
+      - Proxies
+      - DIRECT
+  - name: HK
+    type: url-test
+    proxies:
+    - V2 香港  DMIT 01 200M NF-2.8x
+    - V2 香港  DMIT 02 200M NF-2.8x
+    - V2 香港  DMIT 03 200M NF-2.8x
+    - V2 香港 HKT打机 1G NF-0.2x
+    - 香港-AWS-01 [华中隧道]
+    - 香港-AWS-02 [微软专线S]
+    - 香港-AWS-03 [广东隧道]
+    - 香港-AWS-04 [三网隧道]
+    - 香港-AWS-05 [微软专线B]
+    - 香港-AWS-06 [微软专线C]
+    - 香港-HKT-00 三网隧道 [Netflix]
+    - 香港-HKT-01 微软专线C [Netflix]
+    - 香港-HKT-02 华中隧道 [Netflix]
+    - 香港-HKT-03 三网隧道 [Netflix]
+    - 香港-HKT-04 微软专线B [Netflix]
+    - 香港-HKT-05 华中隧道 [Netflix]
+    - 香港-HKT-06 微软专线S [Netflix]
+    - 香港-HKT-07 华中隧道 [Netflix]
+    - 香港-HKT-08 广东隧道 [Netflix]
+    - 香港-HKT-09 华中隧道 [Netflix]
+    - 香港-HKT-10 三网隧道 [Netflix]
+    - 香港-HKT-11 微软专线S [Netflix]
+    - 香港-HKBN-03 华中隧道 [Netflix]
+    - 香港-HKBN-04 广东隧道 [Netflix]
+    - 香港-HKBN-06 三网隧道 [Netflix]
+    - 香港-HKBN-08 微软专线C [Netflix]
+    - 香港-Azure-01 [三网隧道]
+    - 香港-Azure-02 [微软专线S]
+    - 香港-Azure-03 [微软专线C]
+    - 香港-Azure-03 [广东隧道]
+    - 香港-Azure-04 [华中隧道]
+    - 香港-Azure-05 [华中隧道]
+    - 香港-Azure-06 [三网隧道]
+    - 香港-Azure-07 [微软专线B]
+    - 香港-Azure-08 [微软专线C]
+    - 香港 Azure-09 [CDN优化]
+    - 深港-IPLC专线01-500M [Netflix] x5x
+    - 深港-IPLC专线02-500M [Netflix] x5x
+    - 深港-IPLC专线03-500M [Netflix] x5x
+    - 深港-IPLC专线04-500M [Netflix] x5x
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+  - name: SG
+    type: url-test
+    proxies:
+    - 新加坡 Linode-01 [华中隧道]
+    - 新加坡 Linode-02 [微软专线C]
+    - 新加坡 Linode-03 [广州移动]
+    - 新加坡 Linode-04 华中隧道 [Netflix]
+    - 新加坡 Linode-03 广东隧道 [Netflix]
+    - 新加坡 Linode-05 三网隧道 [Netflix]
+    - 新加坡 Linode-05 微软专线S [Neiflix]
+    - 新加坡-Azure-01 [三网隧道]
+    - 新加坡 Azure-02 [CDN优化]
+    - 新加坡-Azure-03 [华中隧道]
+    - 新加坡-Azure-05 [微软专线B]
+    - 新加坡-Azure-06 [微软专线C]
+    - 新加坡-Alibaba-01 30M [Netflix]
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+  - name: TW
+    type: url-test
+    proxies:
+    - TW-自建
+    - V2 台湾 Hinet 600 NF-0.2x
+    - 台湾-HiNet-台北01-三网隧道 [Netflix]
+    - 台湾-HiNet-台北02-华中隧道 [Netflix]
+    - 台湾-HiNet-台北03-广东隧道 [Netflix]
+    - 台湾-HiNet-台北05-微软专线C [Netflix]
+    - 台湾-HiCloud-商宽01-华中隧道 [Netflix]
+    - 台湾-HiCloud-商宽02-三网隧道 [Netflix]
+    - 台湾-HiCloud-商宽03-微软专线B [Netflix]
+    - 台湾-HiCloud-商宽03-广东隧道 [Netflix]
+    - 台湾-HiCloud-商宽04-微软专线C [Netflix]
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+  - name: JP
+    type: url-test
+    proxies:
+    - V2 日本 IIJ 200M NF-0x(测试)
+    - 日本-GMO-01 三网隧道 [Netflix]
+    - 日本-GMO-02 广东隧道 [Netflix]
+    - 日本-GMO-03 华中隧道 [Netflix]
+    - 日本-AWS-01 [华中隧道]
+    - 日本-AWS-02 [广东隧道]
+    - 日本-AWS-02 [三网隧道]
+    - 日本-AWS-03 [微软专线S]
+    - 日本-Azure-02 [微软专线B]
+    - 日本-Azure-03 [微软专线C]
+    - 日本-Azure-04 [三网隧道]
+    - 日本-Azure-04 [广东隧道]
+    - 日本-Azure-03 [华中隧道]
+    - 日本-Linode-01 微软专线B [Netflix]
+    - 日本-Linode-02 微软专线C [Netflix]
+    - 日本-Linode-03 华中隧道 [Netflix]
+    - 日本-Linode-04 三网隧道 [Netflix]
+    - 日本-Linode-05 广东隧道 [Netflix]
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+  - name: US
+    type: url-test
+    proxies:
+    - V2 美国 FREE-0x
+    - 美国-Washington D.C-01 华中隧道 [Netflix]
+    - 美国-Washington D.C-01 华中隧道 [Netflix]
+    - 美国-Washington D.C-02 微软专线S [Netflix]
+    - 美国-Los Angeles-01 广东隧道 [Netflix]
+    - 美国-Los Angeles-02 微软专线S [Netflix]
+    - 美国-Los Angeles-03 华中隧道 [Netflix]
+    - 美国-Los Angeles-04 三网隧道 [Netflix]
+    - 美国-Los Angeles-05 微软专线C [Netflix]
+    - 美国-Los Angeles-06 微软专线B [Netflix]
+    - 美国-Fremont-01 微软专线C [Netflix]
+    - 美国-Fremont-02 三网隧道 [Netflix]
+    - 美国-Fremont-03 华中隧道 [Netflix]
+    - 美国-San Jose-01 三网隧道 [Netflix] x0.8x
+    - 美国-San Jose-02 华中隧道 [Netflix] x0.8x
+    - 美国-San Jose-03 广东隧道 [Netflix] x0.8x
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+rules:
+ - DOMAIN-KEYWORD,1password,DIRECT
+ - DOMAIN-SUFFIX,vultr.com,DIRECT
+ - DOMAIN-SUFFIX,mb3admin.com,DIRECT
+ - DOMAIN-KEYWORD,github,Proxies
+ - DOMAIN-SUFFIX,github.com,Proxies
+ - DOMAIN-SUFFIX,github.io,Proxies
+ - DOMAIN-SUFFIX,githubapp.com,Proxies
+ - DOMAIN-SUFFIX,githubassets.com,Proxies
+ - DOMAIN-SUFFIX,githubusercontent.com,Proxies
+ - DOMAIN-SUFFIX,home-intl.console.aliyun.com,Proxies
+ - IP-CIDR,173.245.48.0/20,Proxies
+ - IP-CIDR,103.21.244.0/22,Proxies
+ - IP-CIDR,103.22.200.0/22,Proxies
+ - IP-CIDR,103.31.4.0/22,Proxies
+ - IP-CIDR,141.101.64.0/18,Proxies
+ - IP-CIDR,108.162.192.0/18,Proxies
+ - IP-CIDR,190.93.240.0/20,Proxies
+ - IP-CIDR,188.114.96.0/20,Proxies
+ - IP-CIDR,197.234.240.0/22,Proxies
+ - IP-CIDR,198.41.128.0/17,Proxies
+ - IP-CIDR,162.158.0.0/15,Proxies
+ - IP-CIDR,104.16.0.0/12,Proxies
+ - IP-CIDR,172.64.0.0/13,Proxies
+ - IP-CIDR,131.0.72.0/22,Proxies
+ - DOMAIN-SUFFIX,163yun.com,Netease
+ - DOMAIN-SUFFIX,music.163.com,Netease
+ - DOMAIN-SUFFIX,music.126.net,Netease
+ - DOMAIN-SUFFIX,api.iplay.163.com,Netease
+ - DOMAIN-SUFFIX,apm.music.163.com,Netease
+ - DOMAIN-SUFFIX,apm3.music.163.com,Netease
+ - DOMAIN-SUFFIX,interface.music.163.com,Netease
+ - DOMAIN-SUFFIX,interface3.music.163.com,Netease
+ - DOMAIN-SUFFIX,mam.netease.com,Netease
+ - DOMAIN-SUFFIX,hz.netease.com,Netease
+ - IP-CIDR,39.105.63.80/32,Netease
+ - IP-CIDR,45.254.48.1/32,Netease
+ - IP-CIDR,47.100.127.239/32,Netease
+ - IP-CIDR,59.111.21.14/31,Netease
+ - IP-CIDR,59.111.179.214/32,Netease
+ - IP-CIDR,59.111.181.38/32,Netease
+ - IP-CIDR,59.111.181.60/32,Netease
+ - IP-CIDR,59.111.160.195/32,Netease
+ - IP-CIDR,59.111.160.197/32,Netease
+ - IP-CIDR,59.111.181.35/32,Netease
+ - IP-CIDR,59.111.238.29/32,Netease
+ - IP-CIDR,101.71.154.241/32,Netease
+ - IP-CIDR,103.126.92.132/32,Netease
+ - IP-CIDR,103.126.92.133/32,Netease
+ - IP-CIDR,112.13.119.17/32,Netease
+ - IP-CIDR,112.13.122.1/32,Netease
+ - IP-CIDR,115.236.118.33/32,Netease
+ - IP-CIDR,115.236.121.1/32,Netease
+ - IP-CIDR,118.24.63.156/32,Netease
+ - IP-CIDR,193.112.159.225/32,Netease
+ - IP-CIDR,223.252.199.66/32,Netease
+ - IP-CIDR,223.252.199.67/32,Netease
+ - DOMAIN-SUFFIX,netflix.com,Netflix
+ - DOMAIN-SUFFIX,netflix.net,Netflix
+ - DOMAIN-SUFFIX,nflxext.com,Netflix
+ - DOMAIN-SUFFIX,nflximg.com,Netflix
+ - DOMAIN-SUFFIX,nflximg.net,Netflix
+ - DOMAIN-SUFFIX,nflxso.net,Netflix
+ - DOMAIN-SUFFIX,nflxvideo.net,Netflix
+ - IP-CIDR,108.175.32.0/20,Netflix
+ - IP-CIDR,185.2.220.0/22,Netflix
+ - IP-CIDR,185.9.188.0/22,Netflix
+ - IP-CIDR,192.173.127.0/24,Netflix
+ - IP-CIDR,192.173.64.0/18,Netflix
+ - IP-CIDR,192.173.65.0/24,Netflix
+ - IP-CIDR,192.173.66.0/24,Netflix
+ - IP-CIDR,192.173.67.0/24,Netflix
+ - IP-CIDR,192.173.68.0/24,Netflix
+ - IP-CIDR,192.173.70.0/24,Netflix
+ - IP-CIDR,192.173.72.0/24,Netflix
+ - IP-CIDR,192.173.73.0/24,Netflix
+ - IP-CIDR,192.173.74.0/24,Netflix
+ - IP-CIDR,192.173.76.0/24,Netflix
+ - IP-CIDR,192.173.78.0/24,Netflix
+ - IP-CIDR,192.173.79.0/24,Netflix
+ - IP-CIDR,198.38.108.0/24,Netflix
+ - IP-CIDR,198.38.109.0/24,Netflix
+ - IP-CIDR,198.38.110.0/24,Netflix
+ - IP-CIDR,198.38.111.0/24,Netflix
+ - IP-CIDR,198.38.112.0/24,Netflix
+ - IP-CIDR,198.38.113.0/24,Netflix
+ - IP-CIDR,198.38.114.0/24,Netflix
+ - IP-CIDR,198.38.115.0/24,Netflix
+ - IP-CIDR,198.38.120.0/24,Netflix
+ - IP-CIDR,198.38.121.0/24,Netflix
+ - IP-CIDR,198.38.122.0/24,Netflix
+ - IP-CIDR,198.38.96.0/19,Netflix
+ - IP-CIDR,198.38.98.0/24,Netflix
+ - IP-CIDR,198.38.99.0/24,Netflix
+ - IP-CIDR,198.45.48.0/20,Netflix
+ - IP-CIDR,198.45.48.0/24,Netflix
+ - IP-CIDR,198.45.49.0/24,Netflix
+ - IP-CIDR,198.45.50.0/24,Netflix
+ - IP-CIDR,198.45.56.0/24,Netflix
+ - IP-CIDR,207.45.72.0/22,Netflix
+ - IP-CIDR,207.45.73.0/24,Netflix
+ - IP-CIDR,208.75.76.0/22,Netflix
+ - IP-CIDR,208.75.76.0/24,Netflix
+ - IP-CIDR,23.246.0.0/18,Netflix
+ - IP-CIDR,23.246.10.0/24,Netflix
+ - IP-CIDR,23.246.11.0/24,Netflix
+ - IP-CIDR,23.246.14.0/24,Netflix
+ - IP-CIDR,23.246.15.0/24,Netflix
+ - IP-CIDR,23.246.16.0/24,Netflix
+ - IP-CIDR,23.246.17.0/24,Netflix
+ - IP-CIDR,23.246.2.0/24,Netflix
+ - IP-CIDR,23.246.20.0/24,Netflix
+ - IP-CIDR,23.246.21.0/24,Netflix
+ - IP-CIDR,23.246.26.0/24,Netflix
+ - IP-CIDR,23.246.27.0/24,Netflix
+ - IP-CIDR,23.246.3.0/24,Netflix
+ - IP-CIDR,23.246.30.0/24,Netflix
+ - IP-CIDR,23.246.31.0/24,Netflix
+ - IP-CIDR,23.246.36.0/24,Netflix
+ - IP-CIDR,23.246.38.0/24,Netflix
+ - IP-CIDR,23.246.39.0/24,Netflix
+ - IP-CIDR,23.246.41.0/24,Netflix
+ - IP-CIDR,23.246.42.0/24,Netflix
+ - IP-CIDR,23.246.44.0/24,Netflix
+ - IP-CIDR,23.246.45.0/24,Netflix
+ - IP-CIDR,23.246.46.0/24,Netflix
+ - IP-CIDR,23.246.47.0/24,Netflix
+ - IP-CIDR,23.246.48.0/24,Netflix
+ - IP-CIDR,23.246.49.0/24,Netflix
+ - IP-CIDR,23.246.50.0/24,Netflix
+ - IP-CIDR,23.246.51.0/24,Netflix
+ - IP-CIDR,23.246.52.0/24,Netflix
+ - IP-CIDR,23.246.54.0/24,Netflix
+ - IP-CIDR,23.246.55.0/24,Netflix
+ - IP-CIDR,23.246.56.0/24,Netflix
+ - IP-CIDR,23.246.57.0/24,Netflix
+ - IP-CIDR,23.246.58.0/24,Netflix
+ - IP-CIDR,23.246.59.0/24,Netflix
+ - IP-CIDR,23.246.6.0/24,Netflix
+ - IP-CIDR,23.246.7.0/24,Netflix
+ - IP-CIDR,37.77.184.0/21,Netflix
+ - IP-CIDR,37.77.186.0/24,Netflix
+ - IP-CIDR,37.77.187.0/24,Netflix
+ - IP-CIDR,37.77.188.0/24,Netflix
+ - IP-CIDR,37.77.189.0/24,Netflix
+ - IP-CIDR,45.57.0.0/17,Netflix
+ - IP-CIDR,45.57.0.0/24,Netflix
+ - IP-CIDR,45.57.1.0/24,Netflix
+ - IP-CIDR,45.57.10.0/24,Netflix
+ - IP-CIDR,45.57.100.0/24,Netflix
+ - IP-CIDR,45.57.101.0/24,Netflix
+ - IP-CIDR,45.57.102.0/24,Netflix
+ - IP-CIDR,45.57.103.0/24,Netflix
+ - IP-CIDR,45.57.11.0/24,Netflix
+ - IP-CIDR,45.57.12.0/24,Netflix
+ - IP-CIDR,45.57.13.0/24,Netflix
+ - IP-CIDR,45.57.14.0/24,Netflix
+ - IP-CIDR,45.57.15.0/24,Netflix
+ - IP-CIDR,45.57.16.0/24,Netflix
+ - IP-CIDR,45.57.17.0/24,Netflix
+ - IP-CIDR,45.57.18.0/24,Netflix
+ - IP-CIDR,45.57.19.0/24,Netflix
+ - IP-CIDR,45.57.2.0/24,Netflix
+ - IP-CIDR,45.57.20.0/24,Netflix
+ - IP-CIDR,45.57.21.0/24,Netflix
+ - IP-CIDR,45.57.22.0/24,Netflix
+ - IP-CIDR,45.57.23.0/24,Netflix
+ - IP-CIDR,45.57.28.0/24,Netflix
+ - IP-CIDR,45.57.29.0/24,Netflix
+ - IP-CIDR,45.57.3.0/24,Netflix
+ - IP-CIDR,45.57.32.0/24,Netflix
+ - IP-CIDR,45.57.35.0/24,Netflix
+ - IP-CIDR,45.57.36.0/24,Netflix
+ - IP-CIDR,45.57.37.0/24,Netflix
+ - IP-CIDR,45.57.4.0/24,Netflix
+ - IP-CIDR,45.57.40.0/23,Netflix
+ - IP-CIDR,45.57.40.0/24,Netflix
+ - IP-CIDR,45.57.41.0/24,Netflix
+ - IP-CIDR,45.57.44.0/24,Netflix
+ - IP-CIDR,45.57.45.0/24,Netflix
+ - IP-CIDR,45.57.47.0/24,Netflix
+ - IP-CIDR,45.57.48.0/24,Netflix
+ - IP-CIDR,45.57.49.0/24,Netflix
+ - IP-CIDR,45.57.5.0/24,Netflix
+ - IP-CIDR,45.57.56.0/24,Netflix
+ - IP-CIDR,45.57.58.0/24,Netflix
+ - IP-CIDR,45.57.59.0/24,Netflix
+ - IP-CIDR,45.57.6.0/24,Netflix
+ - IP-CIDR,45.57.60.0/24,Netflix
+ - IP-CIDR,45.57.62.0/24,Netflix
+ - IP-CIDR,45.57.63.0/24,Netflix
+ - IP-CIDR,45.57.64.0/24,Netflix
+ - IP-CIDR,45.57.65.0/24,Netflix
+ - IP-CIDR,45.57.68.0/24,Netflix
+ - IP-CIDR,45.57.69.0/24,Netflix
+ - IP-CIDR,45.57.7.0/24,Netflix
+ - IP-CIDR,45.57.70.0/24,Netflix
+ - IP-CIDR,45.57.71.0/24,Netflix
+ - IP-CIDR,45.57.72.0/24,Netflix
+ - IP-CIDR,45.57.73.0/24,Netflix
+ - IP-CIDR,45.57.74.0/24,Netflix
+ - IP-CIDR,45.57.75.0/24,Netflix
+ - IP-CIDR,45.57.78.0/24,Netflix
+ - IP-CIDR,45.57.79.0/24,Netflix
+ - IP-CIDR,45.57.8.0/23,Netflix
+ - IP-CIDR,45.57.8.0/24,Netflix
+ - IP-CIDR,45.57.80.0/24,Netflix
+ - IP-CIDR,45.57.81.0/24,Netflix
+ - IP-CIDR,45.57.82.0/24,Netflix
+ - IP-CIDR,45.57.83.0/24,Netflix
+ - IP-CIDR,45.57.86.0/23,Netflix
+ - IP-CIDR,45.57.86.0/24,Netflix
+ - IP-CIDR,45.57.88.0/24,Netflix
+ - IP-CIDR,45.57.89.0/24,Netflix
+ - IP-CIDR,45.57.9.0/24,Netflix
+ - IP-CIDR,45.57.90.0/23,Netflix
+ - IP-CIDR,45.57.90.0/24,Netflix
+ - IP-CIDR,45.57.91.0/24,Netflix
+ - IP-CIDR,45.57.95.0/24,Netflix
+ - IP-CIDR,45.57.98.0/24,Netflix
+ - IP-CIDR,45.57.99.0/24,Netflix
+ - IP-CIDR,64.120.128.0/17,Netflix
+ - IP-CIDR,66.197.128.0/17,Netflix
+ - IP-CIDR,69.53.224.0/19,Netflix
+ - IP-CIDR,69.53.225.0/24,Netflix
+ - IP-CIDR,69.53.226.0/24,Netflix
+ - IP-CIDR,69.53.227.0/24,Netflix
+ - IP-CIDR,69.53.228.0/24,Netflix
+ - IP-CIDR,69.53.229.0/24,Netflix
+ - IP-CIDR,69.53.231.0/24,Netflix
+ - IP-CIDR,69.53.233.0/24,Netflix
+ - IP-CIDR,69.53.235.0/24,Netflix
+ - IP-CIDR,69.53.240.0/24,Netflix
+ - IP-CIDR,69.53.241.0/24,Netflix
+ - IP-CIDR,69.53.242.0/24,Netflix
+ - IP-CIDR,69.53.245.0/24,Netflix
+ - IP-CIDR,69.53.246.0/24,Netflix
+ - IP-CIDR,69.53.254.0/24,Netflix
+ - DOMAIN-KEYWORD,qiyi,HKMTMedia
+ - DOMAIN-SUFFIX,qy.net,HKMTMedia
+ - IP-CIDR,101.227.0.0/16,HKMTMedia,no-resolve
+ - IP-CIDR,101.224.0.0/13,HKMTMedia,no-resolve
+ - IP-CIDR,119.176.0.0/12,HKMTMedia,no-resolve
+ - DOMAIN-SUFFIX,acg.tv,HKMTMedia
+ - DOMAIN-SUFFIX,acgvideo.com,HKMTMedia
+ - DOMAIN-SUFFIX,b23.tv,HKMTMedia
+ - DOMAIN-SUFFIX,biliapi.com,HKMTMedia
+ - DOMAIN-SUFFIX,biliapi.net,HKMTMedia
+ - DOMAIN-SUFFIX,bilibili.com,HKMTMedia
+ - DOMAIN-SUFFIX,biligame.com,HKMTMedia
+ - DOMAIN-SUFFIX,biligame.net,HKMTMedia
+ - DOMAIN-SUFFIX,bilivideo.com,HKMTMedia
+ - DOMAIN-SUFFIX,hdslb.com,HKMTMedia
+ - DOMAIN-SUFFIX,im9.com,HKMTMedia
+ - DOMAIN-SUFFIX,bahamut.com.tw,HKMTMedia
+ - DOMAIN-SUFFIX,gamer.com.tw,HKMTMedia
+ - DOMAIN-SUFFIX,hinet.net,HKMTMedia
+ - GEOIP,CN,DIRECT
+ - GEOIP,US,US
+ - GEOIP,CA,US
+ - MATCH,Final
